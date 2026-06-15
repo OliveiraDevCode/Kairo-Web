@@ -1,22 +1,21 @@
 # Kairo-Web
 
-AI-assisted learning desktop application — frontend.
+AI-powered desktop application built with React, TypeScript, Vite and Tauri.
 
-Built with **React**, **TypeScript**, **Vite**, **Tailwind CSS**, and **Tauri** for cross-platform desktop distribution.
+## Tech Stack
 
-## Stack
-
-- React 18 + TypeScript
-- Vite 6 (bundler / dev server)
-- Tailwind CSS 4 (utility-first styling)
-- React Router 7 (client-side routing)
-- Zustand 5 (state management)
-- Tauri 2 (desktop wrapper)
+- React 18
+- TypeScript
+- Vite 6
+- Tailwind CSS 4
+- React Router 7
+- Zustand 5
+- Tauri 2
 
 ## Prerequisites
 
 - Node.js 18+
-- Rust toolchain (only for Tauri desktop builds)
+- Rust toolchain (required for Tauri desktop builds)
 
 ## Setup
 
@@ -32,13 +31,11 @@ npm run dev
 
 Starts the Vite dev server at `http://localhost:1420`.
 
-### Tauri desktop development
+### Desktop development
 
 ```bash
 npm run tauri:dev
 ```
-
-Launches a native window with hot-reload.
 
 ## Build
 
@@ -48,27 +45,31 @@ npm run build
 
 Produces an optimized build in `dist/`.
 
-### Tauri desktop build
+### Desktop build
 
 ```bash
 npm run tauri:build
 ```
 
-Generates platform-specific distributables in `src-tauri/target/release/`.
+## Project Structure
 
-## Preview
-
-```bash
-npm run preview
+```
+src/
+├── core/           # Hooks, layouts, providers, routing
+├── features/       # Feature modules (chat, workspaces)
+│   ├── chat/
+│   └── workspaces/
+└── lib/            # Shared components, constants, utilities
+src-tauri/          # Tauri desktop wrapper (Rust)
 ```
 
-## Environment
+## Environment Variables
 
 | Variable | Default | Description |
 |---|---|---|
-| `TAURI_DEV_HOST` | — | Set to enable network-exposed HMR |
+| `TAURI_DEV_HOST` | — | Enables network-exposed HMR |
 | `VITE_API_URL` | `http://localhost:8000` | Backend API base URL |
 
 ## Related
 
-- [Kairo-API](https://github.com/OliveiraDevCode/Kairo-API) — Python FastAPI backend
+- [Kairo-API](https://github.com/OliveiraDevCode/Kairo-API) — Backend API and AI services
