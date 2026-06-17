@@ -14,7 +14,11 @@
     "lint:fix": "eslint . --fix",
     "test": "vitest run",
     "test:watch": "vitest",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "e2e": "playwright test --config=tests/acceptance/playwright.config.ts",
+    "e2e:ui": "playwright test --ui --config=tests/acceptance/playwright.config.ts",
+    "e2e:headed": "playwright test --headed --config=tests/acceptance/playwright.config.ts",
+    "e2e:debug": "playwright test --debug --config=tests/acceptance/playwright.config.ts"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.2.0",
